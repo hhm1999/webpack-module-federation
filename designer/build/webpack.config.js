@@ -51,7 +51,7 @@ const config = {
                         }
                     }
                 ],
-                include: [resolve(__dirname, 'src')]
+                include: [resolve(__dirname, '../src')]
             },
             {
                 test: /\.js$/,
@@ -83,7 +83,7 @@ const config = {
     plugins: [
         new VueLoaderPlugin(), // vue加载器
         new HtmlWebpackPlugin({
-            template: join(__dirname, 'src/index.html'), // 引入模版
+            template: join(__dirname, '../src/index.html'), // 引入模版
             filename: 'index.html',
             minify: { // 对index.html压缩
                 collapseWhitespace: isProd, // 去掉index.html的空格
@@ -100,6 +100,8 @@ const config = {
           remotes: {
             // component: "component@http://localhost:3001/remoteEntry.js",
             component: "component@[window.libraryRemoteEntryUrl]",
+          },
+          shared: {
           }
         }),
         new ExternalTemplateRemotesPlugin()

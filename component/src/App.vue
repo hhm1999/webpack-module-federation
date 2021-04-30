@@ -1,23 +1,35 @@
 <template>
-    <div>
-      <div class="app">组件库项目</div>
-      <remoteComponent/>
-    </div>
+    <f7AppPack :routes="routes">
+        
+    </f7AppPack>
 </template>
 
 <script>
-import remoteComponent from './remoteComponent';
+import routes from './templates/templates1/routes.js';
+import f7AppPack from './f7AppPack';
+
 export default {
-    name: "App",
+    name: 'App',
+    data() {
+        return {
+          routes: routes,
+        };
+    },
+    computed: {
+    },
+    methods: {
+    },
+    created() {
+    },
+    beforeDestroy() {
+    },
     components: {
-      remoteComponent
+      f7AppPack
     }
-}
+};
 </script>
 
-<style scoped lang="less">
-.app {
-    font-size: 20px;
-    color: #409EFF;
-}
+<style lang="less">
+
 </style>
+

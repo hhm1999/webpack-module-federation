@@ -47,7 +47,7 @@ const config = {
                             loaders: {
                                 css: cssConfig
                             },
-                            preserveWhitespace: false // 不要留空白
+                            preserveWhitespace: false // 不保留空格
                         }
                     }
                 ],
@@ -103,8 +103,15 @@ const config = {
           library: { type: "var", name: "component" },
           // 需要暴露的模块，使用时通过 `${name}/${expose}` 引入
           exposes: {
-              './remoteComponent': './src/remoteComponent.vue'
+              './remoteComponent': './src/remoteComponent.vue',
+              './remoteComponent.store': './src/store/remoteComponent/index.js',
+              // './templates1': './src/templates/templates1.vue',
+              // './templates1.list': './src/templates/list.vue',
+              './routes': './src/templates/templates1/routes.js',
+              './f7AppPack': './src/f7AppPack.vue',
           },
+          shared: {
+          }
         })
     ]
 };
